@@ -1,0 +1,54 @@
+﻿
+html {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 50px;
+    background: #ffffff;
+    /*background-image: linear-gradient(315deg, #feae96 0%, #fe0944 74%);*/
+}
+body {
+}
+.box {
+    margin: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    /*recommend 1920 / 1080 max based on usage stats, use 100% to that point*/
+    width: 400px;
+    max-width: 800px;
+    height: 100%;
+    max-height: 700px;
+    background-color: #7ed6df;
+    background: linear-gradient(315deg, #7ed6df 0%, #000000d8 74%);
+    //background-color: #000000;
+    //background: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+    //background-color: #9dc5c3;
+    //background: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+    //background: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+    // background-color: #ffffff;
+    //background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    //background: linear-gradient(315deg, #feae96 0%, #fe0944 74%);
+    -webkit-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+.box-shadow {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: sans-serif;
+    border-radius: 6px;
+    box-shadow: 2px 2px 20px 2px gray;
+}
+.scrollmenu {
+    overflow: auto;
+}
+.scrollmenu::-webkit-scrollbar {
+        display: none;
+}

@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MultiUserAddressBook.master.cs" Inherits="WebApplication2.MultiUser_AddressBook.Content.MultiUserAddressBook" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="2Themes.css" rel="stylesheet" />
+    <link href="../../fontawesome-free-6.0.0-web/css/all.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/JScript.js" ></script>
+    <title>Address Book</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .Color {
+             background-color: #7ed6df;
+             background: linear-gradient(315deg, #7ed6df 0%, #000000 74%);
+        }
+
+        .Header {
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" style="overflow:hidden">
+
+        <div class="Color">
+            <div class="row">
+                <div class="col-md-10">
+            <i class="fa-regular fa-address-book fa-3x" style="color:azure;"></i>
+            <span style="color:azure; font-family:News706 BT; font-size:35px">Address Book</span>
+            </div>
+                <div class="col-md-2">
+            <asp:Label CssClass="col-md-1" ID="lblDisplayName" runat="server" Font-Names="News706 BT" ForeColor="White"></asp:Label>
+            <asp:LinkButton ID="lbtnLogOut" CssClass="btn btn-outline-light" Font-Size="Smaller" Width="100px" Font-Names="News706 BT" Text="Log Out" runat="server" OnClick="lbtnLogOut_Click"></asp:LinkButton>
+          </div>
+                </div>
+                <hr />
+
+            <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlCountry" NavigateUrl="~/MultiUser AddressBook/AdminPanel/Country/Country.aspx" runat="server">Country</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlState" NavigateUrl="~/MultiUser AddressBook/AdminPanel/State/State.aspx" runat="server">State</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlCity" NavigateUrl="~/MultiUser AddressBook/AdminPanel/City/City.aspx" runat="server">City</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlContact" NavigateUrl="~/MultiUser AddressBook/AdminPanel/Contact/Contact.aspx" runat="server">Contact</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlContactCategory" NavigateUrl="~/MultiUser AddressBook/AdminPanel/ContactCategory/ContactCategory.aspx" runat="server">ContactCategory</asp:HyperLink>
+           <hr />
+            </div>
+            
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="Color">
+            <div class="col-md-col-12" style="text-align: center; font-family:News706 BT">
+                <h2 style="color:aliceblue">Jenil B. Vasoya  ||  190540107222</h2>
+            </div>
+            <div class="col-md-col-12" style="text-align: center; font-family:News706 BT">
+                <h4 style="color:aliceblue">190540107222@darshan.ac.in</h4>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
