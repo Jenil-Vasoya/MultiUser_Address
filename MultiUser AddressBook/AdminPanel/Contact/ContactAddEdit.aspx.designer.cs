@@ -15,6 +15,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
     {
 
         /// <summary>
+        /// lblMessageMode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageMode;
+
+        /// <summary>
         /// ddlCountry control.
         /// </summary>
         /// <remarks>
@@ -240,15 +249,6 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// revEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
-
-        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -256,6 +256,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmail;
+
+        /// <summary>
+        /// revEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
 
         /// <summary>
         /// rfvEmail control.
@@ -321,13 +330,40 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         protected global::System.Web.UI.WebControls.TextBox txtFacebook;
 
         /// <summary>
-        /// txtLinkedIn control.
+        /// txtLinkedIN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLinkedIn;
+        protected global::System.Web.UI.WebControls.TextBox txtLinkedIN;
+
+        /// <summary>
+        /// fuFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuFile;
+
+        /// <summary>
+        /// imgImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgImage;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// btnSave control.
@@ -346,14 +382,5 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlCancel;
-
-        /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

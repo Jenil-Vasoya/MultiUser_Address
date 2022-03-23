@@ -36,6 +36,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                     DeleteContact(Convert.ToInt32(e.CommandArgument.ToString().Trim()));
                 }
             }
+            if(e.CommandName == "DeleteImage")
+            {
+
+                if (e.CommandArgument.ToString() != "")
+                {
+                    DeleteImage(Convert.ToInt32(e.CommandArgument.ToString().Trim()));
+                }
+
+            }
 
         }
 
@@ -52,10 +61,13 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
             #endregion connection string
 
             try
-            {
+                {
                 #region Set Connection & Command Object
                 objConn.Open();
-
+                if (objConn.State != ConnectionState.Open)
+                {
+                    objConn.Open();
+                }
                 SqlCommand objCmd = new SqlCommand();
                 objCmd.Connection = objConn;
                 objCmd.CommandType = CommandType.StoredProcedure;
@@ -74,10 +86,12 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                     gvContact.DataSource = objSDR;
                     gvContact.DataBind();
                 }
+                objConn.Close();
 
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally
@@ -132,6 +146,47 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         }
 
         #endregion Delete Contact
+
+        #region Delete Image
+        private void DeleteImage(SqlInt32 ContactID)
+        {
+
+            SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AddressBookConnectionString"].ConnectionString.Trim());
+
+            try
+            {
+                objConn.Open();
+                SqlCommand objCmd = objConn.CreateCommand();
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.CommandText = "PR_Contact_DeleteFileByPK";
+                objCmd.Parameters.AddWithValue("ContactID", ContactID.ToString());
+                if (Session["UserID"] != null)
+                {
+                    objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+                }
+
+                objCmd.ExecuteNonQuery();
+
+                if (objConn.State != ConnectionState.Closed)
+                {
+                    objConn.Close();
+                }
+
+                lblMessage.Text = "Image Deleted Successfully";
+
+                FillGridView();
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message;
+            }
+            finally
+            {
+                if (objConn.State != ConnectionState.Closed)
+                    objConn.Close();
+            }
+            #endregion Delete Image
+        }
 
     }
 }

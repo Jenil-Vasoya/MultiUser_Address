@@ -22,20 +22,21 @@ body {
     max-width: 800px;
     height: 100%;
     max-height: 700px;
-    background-color: #7ed6df;
-    background: linear-gradient(315deg, #7ed6df 0%, #000000d8 74%);
-    //background-color: #000000;
-    //background: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
-    //background-color: #9dc5c3;
-    //background: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
-    //background: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
-    // background-color: #ffffff;
-    //background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
-    //background: linear-gradient(315deg, #feae96 0%, #fe0944 74%);
+    border-style: solid;
+    border-color: black;
+    /*background: linear-gradient(315deg, #7ed6df 0%, #000000d8 74%);
+    background-color: #000000;
+    background: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+    background-color: #9dc5c3;
+    background: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+    background: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+    background-color: #ffffff;
+    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    background: linear-gradient(315deg, #feae96 0%, #fe0944 74%);*/
     -webkit-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
-    border-radius: 25px;
+    box-shadow: 0px 0px 96px 0px white;
+    border-radius: 15px;
 }
 .box-shadow {
     margin-top: 30px;
@@ -44,7 +45,7 @@ body {
     margin-right: 30px;
     font-family: sans-serif;
     border-radius: 6px;
-    box-shadow: 2px 2px 20px 2px gray;
+    box-shadow: 2px 2px 20px 2px yellow;
 }
 .scrollmenu {
     overflow: auto;

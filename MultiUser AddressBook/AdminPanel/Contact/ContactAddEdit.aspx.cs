@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,10 +25,14 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
 
                 if (Request.QueryString["ContactID"] != null)
                 {
-                    lblMessage.Text = "Edit Mode  |  CityID " + Request.QueryString["ContactID"].Trim();
+                    lblMessageMode.Text = "Edit Mode  |  CityID " + Request.QueryString["ContactID"].Trim();
                     FillControls(Convert.ToInt32(Request.QueryString["ContactID"].Trim()));
                     FillDropDownStateList();
                     FillDropDownCityList();
+                }
+                else
+                {
+                    lblMessageMode.Text = "Add Mode";
                 }
             }
 
@@ -52,13 +57,13 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
             SqlString strContactName = new SqlString();
             SqlString strContactNo = new SqlString();
             SqlString strWhatsappNo = new SqlString();
-            SqlString strBirthDate = new SqlString();
+            SqlDateTime strBirthDate = new SqlDateTime();
             SqlString strEmail = new SqlString();
             SqlInt32 strAge = new SqlInt32();
             SqlString strAddress = new SqlString();
             SqlString strBloodGroup = new SqlString();
             SqlString strFacebook = new SqlString();
-            SqlString strLinkedIn = new SqlString();
+            SqlString strLinkedIN = new SqlString();
 
             #endregion Local Variable
 
@@ -142,7 +147,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                 }
                 if (txtBirthDate.Text.Trim() != "")
                 {
-                    strBirthDate = txtBirthDate.Text.Trim();
+                    strBirthDate = Convert.ToDateTime(txtBirthDate.Text.Trim());
                 }
                 if (txtEmail.Text.Trim() != "")
                 {
@@ -164,9 +169,9 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                 {
                     strFacebook = txtFacebook.Text.Trim();
                 }
-                if (txtLinkedIn.Text.Trim() != "")
+                if (txtLinkedIN.Text.Trim() != "")
                 {
-                    strLinkedIn = txtLinkedIn.Text.Trim();
+                    strLinkedIN = txtLinkedIN.Text.Trim();
                 }
 
                 #endregion Gather Information
@@ -193,7 +198,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                 objCmd.Parameters.AddWithValue("@Address", strAddress);
                 objCmd.Parameters.AddWithValue("@BloodGroup", strBloodGroup);
                 objCmd.Parameters.AddWithValue("@FacebookID", strFacebook);
-                objCmd.Parameters.AddWithValue("@LinkedINID", strLinkedIn);
+                objCmd.Parameters.AddWithValue("@LinkedINID", strLinkedIN);
 
                 #endregion Set Connection & Command Object
 
@@ -210,7 +215,16 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                     {
                         objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
                     }
+
+                    SqlInt32 ContactID = 0;
+                    ContactID = Convert.ToInt32(Request.QueryString["ContactID"]);
+
+                    UploadImage(ContactID, "Image");
+
                     objCmd.ExecuteNonQuery();
+
+                   
+
                     Response.Redirect("~/MultiUser AddressBook/AdminPanel/Contact/Contact.aspx", true);
                     lblMessage.Text = "Data Updated Successfully";
                     ddlCountry.Focus();
@@ -221,13 +235,20 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                 {
                     #region Add Mode
                     //Add Mode
+
                     objCmd.CommandText = "PR_Contact_Insert";
+                   
                     if (Session["UserID"] != null)
                     {
                         objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
                     }
+                    objCmd.Parameters.Add("ContactID",SqlDbType.Int,4).Direction = ParameterDirection.Output;
                     objCmd.ExecuteNonQuery();
 
+                    SqlInt32 ContactID = 0;
+                    ContactID = Convert.ToInt32(objCmd.Parameters["ContactID"].Value);
+
+                    UploadImage(ContactID,"Image");
 
 
 
@@ -244,7 +265,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                     txtAddress.Text = "";
                     txtBloodGroup.Text = "";
                     txtFacebook.Text = "";
-                    txtLinkedIn.Text = "";
+                    txtLinkedIN.Text = "";
                     txtContactName.Focus();
                     txtContactNo.Focus();
                     txtWhatsappNo.Focus();
@@ -254,7 +275,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                     txtAddress.Focus();
                     txtBloodGroup.Focus();
                     txtFacebook.Focus();
-                    txtLinkedIn.Focus();
+                    txtLinkedIN.Focus();
 
                     lblMessage.Text = " Data Inserted successfully";
 
@@ -497,14 +518,18 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
                         }
                         if (!objSDR["LinkedINID"].Equals(DBNull.Value))
                         {
-                            txtFacebook.Text = objSDR["LinkedINID"].ToString().Trim();
+                            txtLinkedIN.Text = objSDR["LinkedINID"].ToString().Trim();
+                        }
+                        if (!objSDR["FilePath"].Equals(DBNull.Value))
+                        {
+                            imgImage.ImageUrl = objSDR["FilePath"].ToString().Trim();
                         }
                         break;
                     }
                 }
                 else
                 {
-                    lblMessage.Text = "No Data Available for the CityID =" + ContactID.ToString();
+                    lblMessage.Text = "No Contact data Available for the =" + ContactID.ToString();
                 }
 
                 #endregion Connection Open And Command Object
@@ -528,6 +553,62 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
 
 
         #endregion FillControl
+
+
+        #region Upload Image
+        private void UploadImage(SqlInt32 Id, string FileExtention)
+        {
+            SqlString strFilePath = SqlString.Null;
+
+            #region Set Connection
+            SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AddressBookConnectionString"].ConnectionString);
+            #endregion Set Connection
+            try
+            {
+
+
+                if (objConn.State != ConnectionState.Open)
+                    objConn.Open();
+
+                #region Image Upload
+                strFilePath = "~/Content/Images/" + Id + ".jpg";
+                if (!Directory.Exists(Server.MapPath("~/Content/Images/")))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~/Content/Images/"));
+                }
+                fuFile.SaveAs(Server.MapPath("~/Content/Images/" + Id + ".jpg"));
+                long length = new FileInfo(Server.MapPath(strFilePath.ToString())).Length;
+                #endregion Image Upload
+
+                #region Create Command and Set Parameters
+                SqlCommand objCmd = new SqlCommand("PR_Contact_UpdateFileByPK", objConn);
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.AddWithValue("@ContactID", Id);
+                objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
+                objCmd.Parameters.AddWithValue("@FileType", Convert.ToString(FileExtention));
+                objCmd.Parameters.AddWithValue("@FileSize", Convert.ToString(length));
+                if (Session["UserID"] != null)
+                    objCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
+
+                objCmd.ExecuteNonQuery();
+                #endregion Create Command and Set Parameters
+
+                if (objConn.State == ConnectionState.Open)
+                    objConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message + ex;
+            }
+            finally
+            {
+                if (objConn.State == ConnectionState.Open)
+                    objConn.Close();
+            }
+        }
+        #endregion Upload Image
+
 
         protected void ddlCountry_SelectedIndexChanged(object sender, EventArgs e)
         {

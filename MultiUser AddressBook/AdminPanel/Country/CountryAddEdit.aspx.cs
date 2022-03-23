@@ -63,7 +63,8 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
 
                 if (strErrorMessage != "")
                 {
-                    lblMessage.Text = strErrorMessage;
+                    lblMessageError.ForeColor = System.Drawing.Color.Red;
+                    lblMessageError.Text = strErrorMessage;
                     return;
                 }
 
@@ -128,8 +129,8 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
 
 
                     objCmd.ExecuteNonQuery();
-
-                    lblMessage.Text = txtCountryName.Text.Trim() + " : " + txtCountryCode.Text.Trim() + " - " + "Insert Successfully";
+                    lblMessage.ForeColor = System.Drawing.Color.Green;
+                    lblMessage.Text = "Data Inserted Successfully";
                     txtCountryName.Text = txtCountryCode.Text = "";
                     txtCountryName.Focus();
                     #endregion Add Mode

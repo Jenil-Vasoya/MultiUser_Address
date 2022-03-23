@@ -15,6 +15,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
     {
 
         /// <summary>
+        /// lblMessageMode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageMode;
+
+        /// <summary>
         /// ddlCountryID control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCountryID;
+
+        /// <summary>
+        /// rfvCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountry;
 
         /// <summary>
         /// txtStateName control.
@@ -33,6 +51,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
         protected global::System.Web.UI.WebControls.TextBox txtStateName;
 
         /// <summary>
+        /// rfvStateName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateName;
+
+        /// <summary>
         /// txtStateCode control.
         /// </summary>
         /// <remarks>
@@ -40,6 +67,24 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStateCode;
+
+        /// <summary>
+        /// rfvStateCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateCode;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// btnSave control.
@@ -60,12 +105,12 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
         protected global::System.Web.UI.WebControls.HyperLink hlCancel;
 
         /// <summary>
-        /// lblMessage control.
+        /// lblMessageError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblMessageError;
     }
 }

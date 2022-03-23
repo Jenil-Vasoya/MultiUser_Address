@@ -42,7 +42,7 @@ namespace WebApplication2.MultiUser_AddressBook
             }
             if (txtPassword.Text.Trim() == "")
             {
-                lblPassword.Text = "*EnterPassword";
+                lblPassword.Text = "*Enter Password";
             }
             if (txtDisplayName.Text.Trim() == "")
             {
@@ -105,6 +105,7 @@ namespace WebApplication2.MultiUser_AddressBook
             txtDisplayName.Text = "";
             txtMobileNo.Text = "";
             txtEmail.Text = "";
+            lblMessage.ForeColor = System.Drawing.Color.Green;
             lblMessage.Text = "Account Created Successfully";
             if (ConnectionState.Open == objConn.State)
             {

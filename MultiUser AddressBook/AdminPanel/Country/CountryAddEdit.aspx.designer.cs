@@ -33,6 +33,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
         protected global::System.Web.UI.WebControls.TextBox txtCountryName;
 
         /// <summary>
+        /// rfvCountryName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountryName;
+
+        /// <summary>
         /// txtCountryCode control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCountryCode;
+
+        /// <summary>
+        /// rfvCountryCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountryCode;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// btnSave control.
@@ -60,12 +87,12 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
         protected global::System.Web.UI.WebControls.HyperLink hlCancel;
 
         /// <summary>
-        /// lblMessage control.
+        /// lblMessageError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblMessageError;
     }
 }

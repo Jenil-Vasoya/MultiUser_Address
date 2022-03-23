@@ -35,16 +35,20 @@
             </div>
                 <div class="col-md-2">
             <asp:Label CssClass="col-md-1" ID="lblDisplayName" runat="server" Font-Names="News706 BT" ForeColor="White"></asp:Label>
-            <asp:LinkButton ID="lbtnLogOut" CssClass="btn btn-outline-light" Font-Size="Smaller" Width="100px" Font-Names="News706 BT" Text="Log Out" runat="server" OnClick="lbtnLogOut_Click"></asp:LinkButton>
-          </div>
-                </div>
+            <asp:HyperLink ID="hlLogOut" runat="server" NavigateUrl="~/MultiUser AddressBook/LogIn.aspx">
+                <i id="iLogOut" class="fa-solid fa-right-from-bracket" onclick="iLogOut_Click" style="color:white" role="button" title="Log Out"></i>
+            </asp:HyperLink>
+          <%--<asp:LinkButton ID="lbtnLogOut" CssClass="btn btn-outline-light" Font-Size="Smaller" Width="100px" Font-Names="News706 BT" Text="Log Out" runat="server" OnClick="lbtnLogOut_Click" ValidationGroup="LogOut"></asp:LinkButton>--%>
                 <hr />
 
-            <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlCountry" NavigateUrl="~/MultiUser AddressBook/AdminPanel/Country/Country.aspx" runat="server">Country</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlState" NavigateUrl="~/MultiUser AddressBook/AdminPanel/State/State.aspx" runat="server">State</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlCity" NavigateUrl="~/MultiUser AddressBook/AdminPanel/City/City.aspx" runat="server">City</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlContact" NavigateUrl="~/MultiUser AddressBook/AdminPanel/Contact/Contact.aspx" runat="server">Contact</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlContactCategory" NavigateUrl="~/MultiUser AddressBook/AdminPanel/ContactCategory/ContactCategory.aspx" runat="server">ContactCategory</asp:HyperLink>
+          </div>
+                </div>
+
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlCountry" Font-Size="Medium" NavigateUrl="~/MultiUser AddressBook/AdminPanel/Country/Country.aspx" runat="server">Country</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlState" Font-Size="Medium" NavigateUrl="~/MultiUser AddressBook/AdminPanel/State/State.aspx" runat="server">State</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlCity" Font-Size="Medium" NavigateUrl="~/MultiUser AddressBook/AdminPanel/City/City.aspx" runat="server">City</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlContact" Font-Size="Medium" NavigateUrl="~/MultiUser AddressBook/AdminPanel/Contact/Contact.aspx" runat="server">Contact</asp:HyperLink>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink CssClass="navbar-brand btn btn-outline-light" Font-Names="News706 BT" ID="hlContactCategory" Font-Size="Medium" NavigateUrl="~/MultiUser AddressBook/AdminPanel/ContactCategory/ContactCategory.aspx" runat="server">Contact Category</asp:HyperLink>
            <hr />
             </div>
             

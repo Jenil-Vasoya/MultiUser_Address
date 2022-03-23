@@ -33,15 +33,6 @@ namespace WebApplication2.MultiUser_AddressBook
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUserName;
 
         /// <summary>
-        /// txtUserName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
-
-        /// <summary>
         /// lblUserName control.
         /// </summary>
         /// <remarks>
@@ -51,22 +42,22 @@ namespace WebApplication2.MultiUser_AddressBook
         protected global::System.Web.UI.WebControls.Label lblUserName;
 
         /// <summary>
-        /// rfvPassword control.
+        /// txtUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
 
         /// <summary>
-        /// txtPassword control.
+        /// rfvUserName0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUserName0;
 
         /// <summary>
         /// lblPassword control.
@@ -78,6 +69,15 @@ namespace WebApplication2.MultiUser_AddressBook
         protected global::System.Web.UI.WebControls.Label lblPassword;
 
         /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+
+        /// <summary>
         /// rfvDisplayName control.
         /// </summary>
         /// <remarks>
@@ -85,15 +85,6 @@ namespace WebApplication2.MultiUser_AddressBook
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDisplayName;
-
-        /// <summary>
-        /// txtDisplayName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDisplayName;
 
         /// <summary>
         /// lblDisplayName control.
@@ -105,13 +96,13 @@ namespace WebApplication2.MultiUser_AddressBook
         protected global::System.Web.UI.WebControls.Label lblDisplayName;
 
         /// <summary>
-        /// revMobileNo control.
+        /// txtDisplayName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMobileNo;
+        protected global::System.Web.UI.WebControls.TextBox txtDisplayName;
 
         /// <summary>
         /// rfvMobileNo control.
@@ -123,13 +114,13 @@ namespace WebApplication2.MultiUser_AddressBook
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMobileNo;
 
         /// <summary>
-        /// txtMobileNo control.
+        /// revMobileNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMobileNo;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMobileNo;
 
         /// <summary>
         /// lblMobileNo control.
@@ -139,6 +130,15 @@ namespace WebApplication2.MultiUser_AddressBook
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMobileNo;
+
+        /// <summary>
+        /// txtMobileNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMobileNo;
 
         /// <summary>
         /// revEmail control.
@@ -159,15 +159,6 @@ namespace WebApplication2.MultiUser_AddressBook
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
 
         /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
-        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -175,6 +166,15 @@ namespace WebApplication2.MultiUser_AddressBook
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmail;
+
+        /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// lblMessage control.

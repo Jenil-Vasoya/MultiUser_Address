@@ -15,6 +15,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
     {
 
         /// <summary>
+        /// lblMessageMode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageMode;
+
+        /// <summary>
         /// ddlState control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlState;
+
+        /// <summary>
+        /// rfvState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvState;
 
         /// <summary>
         /// txtCityName control.
@@ -33,6 +51,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
         protected global::System.Web.UI.WebControls.TextBox txtCityName;
 
         /// <summary>
+        /// rfvCityName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCityName;
+
+        /// <summary>
         /// txtSTDCode control.
         /// </summary>
         /// <remarks>
@@ -42,6 +69,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
         protected global::System.Web.UI.WebControls.TextBox txtSTDCode;
 
         /// <summary>
+        /// rfvSTDCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSTDCode;
+
+        /// <summary>
         /// txtPINCode control.
         /// </summary>
         /// <remarks>
@@ -49,6 +85,24 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPINCode;
+
+        /// <summary>
+        /// rfvPINCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPINCode;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// btnSave control.
@@ -69,12 +123,12 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
         protected global::System.Web.UI.WebControls.HyperLink hlCancel;
 
         /// <summary>
-        /// lblMessage control.
+        /// lblMessageError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblMessageError;
     }
 }

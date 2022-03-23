@@ -22,12 +22,12 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
 
                 if (Request.QueryString["StateID"] != null)
                 {
-                    lblMessage.Text = "Edit Mode | StateID " + Request.QueryString["StateID"].Trim();
+                    lblMessageMode.Text = "Edit Mode | StateID =" + Request.QueryString["StateID"].Trim();
                     FillControls(Convert.ToInt32(Request.QueryString["StateID"].Trim()));
                 }
                 else
                 {
-                    lblMessage.Text = "Add Mode";
+                    lblMessageMode.Text = "Add Mode";
                 }
             }
 
@@ -98,7 +98,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
 
                 if (strErrorMessage.Trim() != "")
                 {
-                    lblMessage.Text = strErrorMessage;
+                    lblMessageError.Text = strErrorMessage;
                     return;
                 }
                 #endregion Server Side Validation
@@ -161,11 +161,13 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
                     //Add Mode
                     objCmd.CommandText = "PR_State_Insert";
                     objCmd.ExecuteNonQuery();
-                    txtStateName.Text = "";
-                    txtStateCode.Text = "";
                     ddlCountryID.SelectedIndex = 0;
                     ddlCountryID.Focus();
-                    lblMessage.Text = txtStateName.Text.Trim() + " : " + txtStateCode.Text.Trim() + " - " + "Insert Successfully";
+                    lblMessage.ForeColor = System.Drawing.Color.Green;
+                    lblMessage.Font.Name = "News706 BT";
+                    lblMessage.Text ="Data Inserted Successfully";
+                    txtStateName.Text = "";
+                    txtStateCode.Text = "";
                     #endregion Add Mode
                 }
 

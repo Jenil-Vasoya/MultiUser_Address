@@ -42,13 +42,13 @@ namespace WebApplication2.MultiUser_AddressBook.Content
         protected global::System.Web.UI.WebControls.Label lblDisplayName;
 
         /// <summary>
-        /// lbtnLogOut control.
+        /// hlLogOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnLogOut;
+        protected global::System.Web.UI.WebControls.HyperLink hlLogOut;
 
         /// <summary>
         /// hlCountry control.

@@ -24,12 +24,12 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
 
                 if (Request.QueryString["CityID"] != null)
                 {
-                    lblMessage.Text = "Edit Mode | CityID " + Request.QueryString["CityID"].Trim();
+                    lblMessageMode.Text = "Edit Mode | CityID " + Request.QueryString["CityID"].Trim();
                     FillControls(Convert.ToInt32(Request.QueryString["CityID"].Trim()));
                 }
                 else
                 {
-                    lblMessage.Text = "Add Mode";
+                    lblMessageMode.Text = "Add Mode";
                 }
 
             }
@@ -68,7 +68,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
 
             if (strErrorMessage.Trim() != "")
             {
-                lblMessage.Text = strErrorMessage;
+                lblMessageError.Text = strErrorMessage;
                 return;
             }
 

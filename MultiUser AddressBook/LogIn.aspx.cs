@@ -17,7 +17,7 @@ namespace WebApplication2.MultiUser_AddressBook
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
@@ -91,7 +91,8 @@ namespace WebApplication2.MultiUser_AddressBook
                 }
                 else
                 {
-                    if(txtUserName.Text != "" && txtPassword.Text != "")
+                    if (txtUserName.Text != "" && txtPassword.Text != "")
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
                     lblMessage.Text = "Invalid UserName or Password !!";
                 }
             }

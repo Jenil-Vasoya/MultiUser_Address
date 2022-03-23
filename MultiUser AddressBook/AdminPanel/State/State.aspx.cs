@@ -113,7 +113,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
                 #endregion Set Connection & Command Object
 
                 objConn.Close();
-
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = "Data Deleted Successfully";
 
                 FillGridView();

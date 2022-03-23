@@ -22,9 +22,9 @@ namespace WebApplication2.MultiUser_AddressBook.Content
                     lblDisplayName.Text = "Welcome " + Session["DisplayName"] + " !";
                 }
             }
-        }
+            }
 
-        protected void lbtnLogOut_Click(object sender, EventArgs e)
+        protected void iLogOut_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("~/MultiUser AddressBook/LogIn.aspx");
