@@ -58,6 +58,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
 
                 if (txtCountryName.Text.Trim() == "")
                     strErrorMessage += " - Enter Country Name ";
+
                 if (txtCountryCode.Text.Trim() == "")
                     strErrorMessage += " - Enter Country Code ";
 
@@ -129,8 +130,8 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
 
 
                     objCmd.ExecuteNonQuery();
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    lblMessage.Text = "Data Inserted Successfully";
+
+                    lblMessage.Text = txtCountryName.Text.Trim() + " : " + txtCountryCode.Text.Trim() + " - " + "Insert Successfully";
                     txtCountryName.Text = txtCountryCode.Text = "";
                     txtCountryName.Focus();
                     #endregion Add Mode
@@ -142,6 +143,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally
@@ -205,6 +207,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
                 }
                 else
                 {
+                    lblMessage.ForeColor = System.Drawing.Color.Red;
                     lblMessage.Text = "No data avilable for the country id" + CountryID.ToString();
                 }
                 if (objConn.State == ConnectionState.Open)
@@ -216,6 +219,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally

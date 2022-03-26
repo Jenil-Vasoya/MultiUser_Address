@@ -46,7 +46,7 @@
             <br />
 
             <div style="text-align: center">
-                <asp:Label ID="lblMessage" runat="server" Font-Size="Small" ForeColor="#003300"></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" Font-Size="Small" ForeColor="red"></asp:Label>
             </div>
             <hr />
 
@@ -60,7 +60,6 @@
                 <div class="row" style="justify-content:center">
                 <asp:HyperLink ID="hlSignUp" runat="server" NavigateUrl="~/MultiUser AddressBook/SignUp.aspx" CssClass="btn" Width="300px">Create Account</asp:HyperLink>
             </div>
-
         </div>
     </form>
 

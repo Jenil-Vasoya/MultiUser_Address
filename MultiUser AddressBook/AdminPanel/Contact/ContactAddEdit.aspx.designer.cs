@@ -123,13 +123,13 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCity2;
 
         /// <summary>
-        /// ddlContactCategory control.
+        /// cblContactCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlContactCategory;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblContactCategory;
 
         /// <summary>
         /// lblContactCategory control.
@@ -139,15 +139,6 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Contact
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblContactCategory;
-
-        /// <summary>
-        /// rfvContactCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContactCategory;
 
         /// <summary>
         /// txtContactName control.

@@ -24,7 +24,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
 
                 if (Request.QueryString["CityID"] != null)
                 {
-                    lblMessageMode.Text = "Edit Mode | CityID " + Request.QueryString["CityID"].Trim();
+                    lblMessageMode.Text = "Edit Mode | CityID =" + Request.QueryString["CityID"].Trim();
                     FillControls(Convert.ToInt32(Request.QueryString["CityID"].Trim()));
                 }
                 else
@@ -68,7 +68,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
 
             if (strErrorMessage.Trim() != "")
             {
-                lblMessageError.Text = strErrorMessage;
+                lblMessage.Text = strErrorMessage;
                 return;
             }
 
@@ -244,6 +244,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
                 }
                 else
                 {
+                    lblMessage.ForeColor = System.Drawing.Color.Red;
                     lblMessage.Text = "No Data Available for the CityID =" + CityID.ToString();
                 }
 
@@ -255,6 +256,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally

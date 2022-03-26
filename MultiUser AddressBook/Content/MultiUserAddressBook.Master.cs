@@ -22,7 +22,7 @@ namespace WebApplication2.MultiUser_AddressBook.Content
                     lblDisplayName.Text = "Welcome " + Session["DisplayName"] + " !";
                 }
             }
-            }
+        }
 
         protected void iLogOut_Click(object sender, EventArgs e)
         {

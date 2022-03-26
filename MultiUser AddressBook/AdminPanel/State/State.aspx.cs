@@ -99,6 +99,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
 
                 if (ConnectionState.Open != objConn.State)
                     objConn.Open();
+
                 SqlCommand objCmd = objConn.CreateCommand();
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.CommandText = "PR_State_DeleteByPK";
@@ -113,6 +114,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
                 #endregion Set Connection & Command Object
 
                 objConn.Close();
+
                 lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = "Data Deleted Successfully";
 
@@ -121,6 +123,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally

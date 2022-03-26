@@ -21,15 +21,14 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
                 if (Request.QueryString["ContactCategoryID"] != null)
                 {
 
-                    lblMessageMode.Text = "Edit Mode | ContactCategoryID = " + Request.QueryString["ContactCategoryID"].ToString();
+                    lblMessage.Text = "Edit Mode | ContactCategoryID = " + Request.QueryString["ContactCategoryID"].ToString();
                     FillControls(Convert.ToInt32(Request.QueryString["ContactCategoryID"]));
                 }
-                else
-                {
-                    lblMessageMode.Text = " Add Mode";
-                }
             }
-            
+            else
+            {
+                lblMessage.Text = " Add Mode";
+            }
 
         }
 
@@ -54,7 +53,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
 
                 if (txtContactCategoryName.Text.Trim() == "")
                 {
-                    lblMessageError.Text = "Please enter the ContactCategory";
+                    lblMessage.Text = "Please enter the ContactCategory";
                 }
 
                 #endregion Server Side Validation
@@ -172,7 +171,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
                 }
                 else
                 {
-                    lblMessageError.Text = "No Date Available for the ContactCategoryID =" + ContactCategoryID.ToString();
+                    lblMessage.Text = "No Date Available for the ContactCategoryID =" + ContactCategoryID.ToString();
                 }
 
                 if (objConn.State == ConnectionState.Open)

@@ -15,15 +15,6 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
     {
 
         /// <summary>
-        /// lblMessageMode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageMode;
-
-        /// <summary>
         /// txtContactCategoryName control.
         /// </summary>
         /// <remarks>
@@ -42,24 +33,6 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
         protected global::System.Web.UI.WebControls.RequiredFieldValidator revContactCategory;
 
         /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
-        /// lblMessageError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageError;
-
-        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -76,5 +49,14 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlCancel;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

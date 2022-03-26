@@ -68,6 +68,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
              if (txtStateName.Text != "" && ddlState.SelectedValue != "-1")
              {*/
             #region local variable
+
             SqlInt32 strCountryID = new SqlInt32();
             SqlString strStateName = new SqlString();
             SqlString strStateCode = new SqlString();
@@ -161,13 +162,11 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
                     //Add Mode
                     objCmd.CommandText = "PR_State_Insert";
                     objCmd.ExecuteNonQuery();
-                    ddlCountryID.SelectedIndex = 0;
-                    ddlCountryID.Focus();
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    lblMessage.Font.Name = "News706 BT";
-                    lblMessage.Text ="Data Inserted Successfully";
                     txtStateName.Text = "";
                     txtStateCode.Text = "";
+                    ddlCountryID.SelectedIndex = 0;
+                    ddlCountryID.Focus();
+                    lblMessage.Text = "Data Inserted Successfully";
                     #endregion Add Mode
                 }
 
@@ -175,6 +174,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally
@@ -225,6 +225,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
 
             }
@@ -293,6 +294,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.State
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally

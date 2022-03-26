@@ -79,6 +79,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally
@@ -117,14 +118,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
 
 
                 objConn.Close();
-                lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text =   " Data Deleted Successfully";
+
+                lblMessage.Text = CountryID + "Data Deleted Successfully";
 
                 FillGridView();
 
             }
             catch (Exception ex)
             {
+                lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = ex.Message;
             }
             finally

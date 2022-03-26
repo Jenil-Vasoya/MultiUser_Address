@@ -17,7 +17,7 @@ namespace WebApplication2.MultiUser_AddressBook
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
@@ -35,10 +35,12 @@ namespace WebApplication2.MultiUser_AddressBook
             if (txtUserName.Text.Trim() == "")
             {
                 lblUserName.Text = "*Invalid UserName";
+                return;
             }
             if (txtPassword.Text.Trim() == "")
             {
                 lblPassword.Text = "*Invalid Password";
+                return;
             }
 
             #endregion Server Side Validation
@@ -91,14 +93,14 @@ namespace WebApplication2.MultiUser_AddressBook
                 }
                 else
                 {
-                    if (txtUserName.Text != "" && txtPassword.Text != "")
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                    if(txtUserName.Text != "" && txtPassword.Text != "")
                     lblMessage.Text = "Invalid UserName or Password !!";
                 }
             }
             catch (Exception ex)
             {
-               lblMessage.Text = ex.Message;    
+                lblMessage.ForeColor = System.Drawing.Color.Red;
+                lblMessage.Text = ex.Message;    
             }
             finally
             {
