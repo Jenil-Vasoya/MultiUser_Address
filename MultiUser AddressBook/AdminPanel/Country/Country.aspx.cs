@@ -119,7 +119,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.Country
 
                 objConn.Close();
 
-                lblMessage.Text = CountryID + "Data Deleted Successfully";
+                lblMessage.Text = CountryID + " Data Deleted Successfully";
 
                 FillGridView();
 

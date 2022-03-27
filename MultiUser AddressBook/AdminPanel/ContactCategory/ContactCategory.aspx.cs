@@ -113,7 +113,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
                     objConn.Close();
                 }
 
-                lblMessage.Text = "Data Deleted Successfully";
+                lblMessage.Text = " Data Deleted Successfully";
 
                 FillGridView();
             }

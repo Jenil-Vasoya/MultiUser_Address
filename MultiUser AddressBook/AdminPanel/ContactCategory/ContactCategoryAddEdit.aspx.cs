@@ -21,14 +21,15 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
                 if (Request.QueryString["ContactCategoryID"] != null)
                 {
 
-                    lblMessage.Text = "Edit Mode | ContactCategoryID = " + Request.QueryString["ContactCategoryID"].ToString();
+                    lblMessageMode.Text = "Edit Mode | ContactCategoryID = " + Request.QueryString["ContactCategoryID"].ToString();
                     FillControls(Convert.ToInt32(Request.QueryString["ContactCategoryID"]));
                 }
+                else
+                {
+                    lblMessageMode.Text = " Add Mode";
+                }
             }
-            else
-            {
-                lblMessage.Text = " Add Mode";
-            }
+           
 
         }
 
@@ -171,6 +172,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.ContactCategory
                 }
                 else
                 {
+                    lblMessage.ForeColor = System.Drawing.Color.Red;
                     lblMessage.Text = "No Date Available for the ContactCategoryID =" + ContactCategoryID.ToString();
                 }
 

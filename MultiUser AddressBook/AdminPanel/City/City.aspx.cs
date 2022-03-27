@@ -121,7 +121,7 @@ namespace WebApplication2.MultiUser_AddressBook.AdminPanel.City
                 {
                     objConn.Close();
                 }
-                lblMessage.Text = "Data Deleted Successfully";
+                lblMessage.Text = " Data Deleted Successfully";
 
                 FillGridView();
             }
